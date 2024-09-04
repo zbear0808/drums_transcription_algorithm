@@ -1,0 +1,33 @@
+image: python:3.7
+
+stages:
+  - test
+  - lint
+#  - types
+#  - deploy
+
+before_script:
+  - pip install --upgrade pip
+  - pip install poetry
+  - poetry config virtualenvs.create true
+  - poetry install
+
+Unit Tests:
+  stage: test
+  script:
+    - poetry run pytest
+
+Python Code Lint:
+  stage: lint
+  script:
+    - poetry run black .
+
+#Static Type check:
+#  stage: types
+#  script:
+#    - poetry run mypy .
+
+#Deploy:
+#  stage: deploy
+#  script:
+#    - deploy_script
