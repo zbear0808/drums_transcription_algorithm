@@ -1,0 +1,12 @@
+{
+  "sampling_frequency":  44100,
+  "mffc_our_implementation": false,
+  "hop_size_onset": 512,
+  "n_mfcc_features": 60,
+  "analysis_window_s": 0.04,
+  "FFT_hop_size": 300,
+  "batch_size": 64,
+  "n_epoch": 50,
+  "dropout": 0.3,
+  "threshold_prediction": 0.5
+}
